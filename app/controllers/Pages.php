@@ -38,8 +38,8 @@
         $data['url'] = trim($data['url']);
 
         //Adding http
-        if(substr( $data['url'], 0, 7 ) !== "http://" && substr( $data['url'], 0, 8 ) !== "https://"){
-          $data['url'] = 'http//' . $data['url'];
+        if(substr( $data['url'], 0, 7 ) != "http://" && substr( $data['url'], 0, 8 ) != "https://"){
+          $data['url'] = 'http://' . $data['url'];
         }
 
         //Is url valid or not
