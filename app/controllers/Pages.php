@@ -8,7 +8,7 @@
 
       if($code){
         if($url = $this->urlModel->getUrl($code)){
-          external_redirect($url);
+          external_redirect($url->url);
         }
       }
 
@@ -32,6 +32,7 @@
         
         $data['url'] = $_POST['url'];
 
+
         //Trim the url
         $data['url'] = trim($data['url']);
 
@@ -45,8 +46,12 @@
           $data['url_err'] = 'Url is not valid.';
         }
 
+        //Check the url is already in the database
+        if($this->urlModel->isThereThisUrl($data['url'])){
+          $data['code'] = $this->urlModel->getCode($url);
+        }
         //Adding url
-        if(empty($data['url_err']) && !empty($data['url']) ) {
+        else if(empty($data['url_err']) && !empty($data['url']) ) {
           if($code = $this->urlModel($data['url'])){
             $data['code'] = $code;
           }

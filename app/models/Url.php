@@ -45,8 +45,29 @@
       // Bind the values
       $this->db->bind(':code', $code);
 
-      return $this->db->single();
+      $this->db->execute();
+
+      return $this->db->rowCount();
     }
 
+    public function isThereThisUrl($url){
+      $this->db->query('SELECT * FROM urls WHERE url = :url');
+
+      // Bind the values
+      $this->db->bind(':url', $url);
+
+      $this->db->execute();
+
+      return $this->db->rowCount();
+    }
+
+    public function getCode($url){
+      $this->db->query('SELECT * FROM urls WHERE url = :url');
+
+      // Bind the values
+      $this->db->bind(':url', $url);
+
+      return $this->db->single();
+    }
 
   }
