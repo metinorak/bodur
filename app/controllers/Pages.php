@@ -8,7 +8,7 @@
 
       if($code){
         if($url = $this->urlModel->getUrl($code)){
-          external_redirect($url->url);
+          external_redirect($url);
         }
       }
 
@@ -25,6 +25,7 @@
       ];
 
       if( $_SERVER['REQUEST_METHOD'] == 'POST'){
+        
         // Process Form
 
         // Sanitize POST data
@@ -42,17 +43,17 @@
         }
 
         //Is url valid or not
-        if(!filter_var($url, FILTER_VALIDATE_URL)){
+        if(!filter_var($data['url'], FILTER_VALIDATE_URL)){
           $data['url_err'] = 'Url is not valid.';
         }
 
         //Check the url is already in the database
         if($this->urlModel->isThereThisUrl($data['url'])){
-          $data['code'] = $this->urlModel->getCode($url);
+          $data['code'] = $this->urlModel->getCode($data['url']);
         }
         //Adding url
         else if(empty($data['url_err']) && !empty($data['url']) ) {
-          if($code = $this->urlModel($data['url'])){
+          if($code = $this->urlModel->addUrl($data['url'])){
             $data['code'] = $code;
           }
           else{
@@ -60,9 +61,9 @@
           }
         }
 
-        $this->view('pages/added-url', $data);
-
       }
+
+      $this->view('pages/homepage', $data);
 
     }
 

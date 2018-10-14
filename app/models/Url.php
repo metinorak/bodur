@@ -28,7 +28,7 @@
       // Bind the values
       $this->db->bind(':code', $code);
 
-      return $this->db->single();
+      return $this->db->single()->url;
     }
 
     private function generateCode($url){
@@ -67,7 +67,7 @@
       // Bind the values
       $this->db->bind(':url', $url);
 
-      return $this->db->single();
+      return $this->db->single()->code;
     }
 
   }
