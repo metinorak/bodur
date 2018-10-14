@@ -33,7 +33,7 @@
 
     private function generateCode($url){
       do{
-        $code = substr(hash("ripemd128", $url . time()), 0, 6);
+        $code = substr(hash("ripemd128", $url . time() . rand()), 0, 6);
       }while($this->isThereThisCode($code));
 
       return $code;
