@@ -17,5 +17,9 @@
   define('URLROOT', 'http://localhost/url-shortener');
   // Site Name
   define('SITENAME', 'Url Shortener');
+
+  //Code Length
+  define('CODE_LENGTH', 6);
+
   // App Version
   define('APPVERSION', '1.0.0');

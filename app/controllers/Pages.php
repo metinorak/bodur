@@ -62,7 +62,7 @@
         }
 
       }
-
+      
       $this->view('pages/homepage', $data);
 
     }

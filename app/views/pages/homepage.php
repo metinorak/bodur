@@ -7,7 +7,7 @@
       <p class="lead">You can shorten your URLs easily.</p>
 
 
-      <form class = "row container" action="<?php echo URLROOT .'/pages/addUrl'; ?>" method="post">
+      <form class = "row container" action="<?php echo URLROOT . '/pages/addUrl'; ?>" method="post">
         <input type="text" name = 'url' class = "form-control col-sm-9" style = "height: 3em"  placeholder = "Enter the URL">
         <input type="submit" class = "col-sm-3 btn-primary" style = "height: 3em"  value="Shorten">
       </form>

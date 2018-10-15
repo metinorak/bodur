@@ -32,8 +32,13 @@
     }
 
     private function generateCode($url){
+      $chars = array_merge(range('A', 'Z'), range('a', 'z'), range('0', '9'));
       do{
-        $code = substr(hash("ripemd128", $url . time() . rand()), 0, 6);
+        $code = '';
+        for($i = 0; $i < CODE_LENGTH; $i++){
+          $code .= $chars[rand(0, count($chars) - 1)];
+        }
+        
       }while($this->isThereThisCode($code));
 
       return $code;

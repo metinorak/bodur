@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 14, 2018 at 09:11 PM
+-- Generation Time: Oct 15, 2018 at 11:41 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `url-shorter`
+-- Database: `url-shortener2`
 --
 
 -- --------------------------------------------------------
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `urls` (
-  `url` text COLLATE utf8_turkish_ci NOT NULL,
-  `code` varchar(6) COLLATE utf8_turkish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+  `url` text COLLATE latin1_general_cs NOT NULL,
+  `code` varchar(6) COLLATE latin1_general_cs NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
 
 --
 -- Indexes for dumped tables
