@@ -3,7 +3,7 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      <h1 class="mt-5">URL Shortener</h1>
+      <h1 class="mt-5"><?php echo SITENAME; ?></h1>
       <p class="lead">You can shorten your URLs easily.</p>
 
       <form class = "row container" action="<?php echo URLROOT . '/pages/addUrl'; ?>" method="post">

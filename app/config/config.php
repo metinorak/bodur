@@ -16,7 +16,7 @@
   // URL Root
   define('URLROOT', 'http://localhost/url-shortener');
   // Site Name
-  define('SITENAME', 'Url Shortener');
+  define('SITENAME', 'Bodur URL Shortener');
 
   //Code Length
   define('CODE_LENGTH', 6);
