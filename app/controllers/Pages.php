@@ -33,7 +33,6 @@
         
         $data['url'] = $_POST['url'];
 
-
         //Trim the url
         $data['url'] = trim($data['url']);
 
@@ -41,9 +40,8 @@
         if(substr( $data['url'], 0, 7 ) != "http://" && substr( $data['url'], 0, 8 ) != "https://"){
           $data['url'] = 'http://' . $data['url'];
         }
-
-        //Is url valid or not
-        if(!filter_var($data['url'], FILTER_VALIDATE_URL)){
+        
+        if(!filter_var($data['url'], FILTER_VALIDATE_URL) ){
           $data['url_err'] = 'Url is not valid.';
         }
 
@@ -56,13 +54,10 @@
           if($code = $this->urlModel->addUrl($data['url'])){
             $data['code'] = $code;
           }
-          else{
-            $data['adding_err'] = 'The url couldn\'t be added'; 
-          }
         }
 
       }
-      
+
       $this->view('pages/homepage', $data);
 
     }
