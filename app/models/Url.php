@@ -32,7 +32,8 @@
     }
 
     private function generateCode($url){
-      $chars = array_merge(range('A', 'Z'), range('a', 'z'), range('0', '9'));
+      $chars = array_merge(range('A', 'Z'), range('a', 'z'), range('0', '9'), ['_', '.', '-', '~']);
+
       do{
         $code = '';
         for($i = 0; $i < CODE_LENGTH; $i++){
