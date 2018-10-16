@@ -1,7 +1,7 @@
 # Bodur URL Shortener
-A simple and ready to use php url shortener.
+A simple and ready to use url shortener.
 
-Written using php, traversy mvc and bootstrap.
+Written using php, mysql, traversy mvc and bootstrap.
 
 ## Installation
 1. Import url-shortener.sql
