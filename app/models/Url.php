@@ -7,7 +7,7 @@
     }
     
     public function addUrl($url){
-      $code = $this->generateCode($url);
+      $code = $this->generateCode();
 
       $this->db->query('INSERT INTO urls(url, code) VALUES(:url, :code)');
 
@@ -31,7 +31,7 @@
       return $this->db->single()->url;
     }
 
-    private function generateCode($url){
+    private function generateCode(){
       $chars = array_merge(range('A', 'Z'), range('a', 'z'), range('0', '9'), ['_', '.', '-', '~']);
 
       do{
